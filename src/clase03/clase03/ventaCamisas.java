@@ -19,11 +19,30 @@ public class ventaCamisas {
          * unidad.
          */
         var scan = new Scanner(System.in);
+        var precioUnidad = 0.0;
         System.out.print("Ingrese el número de camisas a comprar-> ");
         var numC = scan.nextInt();
+        //Determinación precio Unidad
         if (numC > 0 && numC <= 50) {
-            
+            precioUnidad = 50_000;
+        }else if (numC > 50 && numC <= 100) {
+            precioUnidad = 45_000;
+        }else if (numC > 100 && numC <= 150) {
+            precioUnidad = 40_000;
+        }else if (numC > 150 && numC <= 200) {
+            precioUnidad = 35_000;
+        }else if (numC > 200) {
+            precioUnidad = 25_000;
+        }else{
+            System.out.println("Cantidad no válida");
         }
+        //Calcular precio Pedido
+        System.out.println("Resumen Pedido");
+        System.out.print("_______________");
+        System.out.printf("%nNúmero Unidades = %d", numC);
+        System.out.printf("%nPrecio Unidad = %.2f", precioUnidad);
+        var precio = numC*precioUnidad;
+        System.out.printf("%nTotal a pagar = $%.2f", precio);
         scan.close();
     }
 }
