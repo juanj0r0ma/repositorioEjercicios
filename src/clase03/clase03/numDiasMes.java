@@ -19,7 +19,7 @@ public class numDiasMes {
          * 2                        28
          */
         var scan = new Scanner(System.in);
-        System.out.print("Ingrese un número (1-12) -> ");
+        System.out.print("Ingrese el número de mes (1-12) -> ");
         var numMes = scan.nextInt();
         String mes = switch (numMes) {
             case 1 -> "Enero";
