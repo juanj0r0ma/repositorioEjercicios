@@ -13,21 +13,21 @@ public class fibonacciSucesion {
          */
         var scan = new Scanner(System.in);
         var pasado = 0;
-        var nuevo = 0;
+        var nuevo = 1;
         System.out.printf("%nIngrese un número -> ");
         var num = scan.nextInt();
         for(var i=0; i<num; i++){
             if (num<=0) {
                 System.out.printf("Opción no válida");
             }else{
-                if (nuevo==0) {
-                    System.out.printf("%d", pasado);
-                    nuevo++;
+                if (i==0) {
+                    System.out.printf("%d", nuevo);
                 }else{
-                    nuevo = pasado + nuevo;
-                    pasado = nuevo;
+                    var temp = nuevo;
+                    nuevo = temp + pasado;
+                    pasado = temp;
                     System.out.printf(", %d", nuevo);
-                }
+                } 
             }
         }
         scan.close();
